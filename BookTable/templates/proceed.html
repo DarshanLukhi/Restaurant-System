@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block css %}
+	{% load static %}
+	<link rel=stylesheet href="{% static 'proceed.css' %}">
+{%endblock%}
+
+
+{%block title %} Book Table {%endblock%}
+
+{%block body %}
+<br><br><br><br>
+<center>
+    <form action="/booktable/done/">
+    <table border="1" align="center" width="30%">
+        <tr>
+            <td>Table ID</td>
+            <td>{{id}}</td>
+        </tr>
+        <tr>
+            <td>Select Type</td>
+            <td>{{type}}</td>
+        </tr>
+        <tr>
+            <td>How Many People</td>
+            <td>{{people}}</td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>{{date}}</td>
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td>{{time}}</td>
+        </tr>
+        <tr><td><center><input type="submit" value="Proceed"></center></td>
+        </form>
+            <form action="/booktable/">
+                <td><center><input type="submit" value="Edit"></center></td>
+            </form>
+        </tr>
+    </table></center>
+{% endblock %}

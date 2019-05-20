@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{%block css %}
+	{% load static %}
+	<link rel=stylesheet href="{% static 'booktable.css' %}"> 
+{%endblock%}
+
+
+{%block title %} Book Table {%endblock%}
+
+	{% block body%}
+        <table border=0 width=30% center> 
+	        <form action="/booktable/proceed/" method="post">
+				{% csrf_token %}
+	        	<tr>
+	        		<td>Select Type</td>
+	        		<td>
+		        		<select name='type' required>
+		        			<option hidden value="">Please Select Below </option>
+		        			<option value="Non AC Room">Non AC Room</option>
+		        			<option value="AC Room">AC Room</option>
+		        			<option value="Delux Room">Delux Room</option>
+		        		</select>
+	        		</td>
+	        		
+	        	</tr>
+	            <tr>
+	                <td>How Many People: </td>
+	                <td>
+	                    <select name=people required>
+	                        <option hidden value="">Please Select Below </option>
+	                        <option value=1 >1 </option>
+	                        <option value=2 >2 </option>
+	                        <option value=3 >3 </option>
+	                        <option value=4 >4 </option>
+	                        <option value=5 >5 </option>
+	                        <option value=6 >6 </option>
+	                        <option value=7 >7 </option>
+	                        <option value=8 >8</option>
+	                        <option value=9 >9 </option>
+	                        <option value=10 >10 </option>
+
+	                    </select>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td>Date</td>
+	                <td><input type=date name=date required></td>
+	            </tr>
+	            <tr>
+	                <td>Arrive Time</td>
+	                <td><input type=time name=time required></td>
+	            </tr>
+	            <tr>
+	            	<td>
+	            		<center><input class=btn type="submit" value=submit ></center>
+	            	</td>
+	            	<td>
+	            		<input class=btn type="reset" value="cancel">
+	            	</td>
+	            </tr>
+	        </form>
+        </table>
+{% endblock%}

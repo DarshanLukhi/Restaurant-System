@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{%block css %}
+	{% load static %}
+	<link rel=stylesheet href="{% static 'about.css' %}"> 
+{%endblock%}
+
+
+{%block title %} About us {%endblock%}
+
+		{%block body %}
+<br><br><br>
+		<form>
+			<table id="a" width="500px" height="50px">
+				<tr>
+					<td><img src="{% static '1.png'%}" width="120px" height="120px" > </td>
+					<td>
+						<b>Made It Simple</b>
+						<p>Our devloper team made this website too simple so every one use it</hp>
+					 </td>
+				</tr>
+			</table>
+
+			<table id="b" width="500px" height="50px">
+				<tr>
+					<td rowspan="3"><img src="{% static '11.jpg'%}" width="120px" height="120px"  > </td>
+					<td>
+						<b>Pre Book Table</b>
+						<p>You can online book table so you can save your time</p>
+					 </td>
+				</tr>
+			</table>
+
+			<table id="c" width="500px" height="50px">
+				<tr>
+					<td><img src="{% static '12.jpg'%}" width="120px" height="120px" > </td>
+					<td>
+						<b>Online Food Order</b>
+						<p>You can place food order online by our website</p>
+					 </td>
+				</tr>
+			</table>
+
+			<table id="d" width="500px" height="50px">
+				<tr>
+					<td><img src="{% static '13.jpg'%}" width="120px" height="120px" > </td>
+					<td>
+						<b>Daily Deal</b>
+						<p>Restaurant manager put daily offer on our website</hp>
+					 </td>
+				</tr>
+			</table>
+		</form>
+		{%endblock%}
+
+

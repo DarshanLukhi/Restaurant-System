@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block css %}
+	{% load static %}
+	<link rel=stylesheet href="{% static 'base.css' %}">
+	<link rel=stylesheet href="{% static 'myslide.css' %}">
+{%endblock%}
+
+
+{%block body %}
+	<br>
+	<br>
+	<center> <h2> Today's Deal </h2> </center>
+	<center>
+		<div class="w3-content w3-display-container">
+		  <img class="mySlides w3-animate-right" src="{% static 'home2.png' %}" style="width:65%;height:60%">
+		  <img class="mySlides w3-animate-right" src="{% static 'home1.jpg' %}" style="width:65%;height:60%">
+		  <img class="mySlides w3-animate-right" src="{% static 'home4.png' %}" style="width:65%;height:60%">
+
+		  <button class="w3-button w3-black w3-display-left w3-animate-left" onclick="plusDivs(-1)">&#10094;</button>
+		  <button class="w3-button w3-black w3-display-right w3-animate-right" onclick="plusDivs(1)">&#10095;</button>
+		</div>
+	</center>
+	<script>
+		var slideIndex = 0;
+		showDivs(slideIndex);
+		carousel();
+		function carousel()
+		{
+		    var i;
+		    var x = document.getElementsByClassName("mySlides");
+		    for (i = 0; i < x.length; i++) {
+		       x[i].style.display = "none";  
+		    }
+		    slideIndex++;
+		    if (slideIndex > x.length) {slideIndex = 1}
+		    x[slideIndex-1].style.display = "block";  
+		    setTimeout(carousel, 4000);
+		}
+		function plusDivs(n)
+		{
+		  showDivs(slideIndex += n);
+		}
+		function showDivs(n) 
+		{
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++)
+		  {
+		    x[i].style.display = "none";
+		  }
+		  x[slideIndex-1].style.display = "block";
+		}
+	</script>
+{% endblock %}

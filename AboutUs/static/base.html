@@ -1,0 +1,28 @@
+{%block css %} {%endblock%}
+<html>
+    <head>
+        <title>{%block title%} {%endblock%}</title>
+    </head>
+    {% load static %}
+    <link rel=stylesheet href="{% static 'base.css' %}">
+    <body>
+        <header>
+            <div id="logo"><h1>Restaurant</h1></div>
+            {% if name != null %}
+            <div id="login"><a href="/login/logout/"><h3>{{ name }}</h3></a></div>
+            {% else %}
+            <div id="login"><a href="/login/"><h3>login</h3></a></div>
+            {%endif%}
+            <div id="menu">
+                <ul id="l">
+                    <li><a href="/home/">Home</a></li>
+    				<li><a href="/booktable/">Book Table</a></li>
+    				<li><a href="/foodorder/">Food order</a></li>
+                    <!--<li><a href="/login/">Login</a></li>-->
+    				<li><a href="/about/">About us</a></li>
+                </ul>
+            </div>
+        </header>
+        {%block body%} {%endblock%}
+    </body>
+</html>

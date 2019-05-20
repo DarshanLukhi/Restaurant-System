@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block css %}
+	{% load static %}
+	<link rel=stylesheet href="{% static 'login.css' %}"> 
+{%endblock%}
+
+
+{%block title %} Login {%endblock%}
+
+		{%block body %}
+
+		<input type='checkbox' id='form-switch'>
+		<form id='login-form' action="/login/verify/" method='post'>
+			{% csrf_token %}
+			<b><font color="red"> {{error}}</font></b><br>
+			<input type="text" placeholder="Username or Email"  name="username" value = "" id="username" required>
+			<input type="password" placeholder="Password" name="password" value = "" id="password" required>
+			<button type='submit'>Login</button>
+			<label for='form-switch'><span>Register</span></label>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			<a href='/login/forgot/'>Forgot Password?</a>
+		</form>
+		<form id='register-form' action="/login/register/" method='post'>
+			{% csrf_token %}
+			<input id=a type="text" placeholder="First Name" name="fname" required>
+			<input id=a type="text" placeholder="Last Name"  name="lname" required>
+			<input type="text" placeholder="Username" name="username" required>
+			<input type="email" placeholder="Gmail" name="gmail" required>
+			<input type="password" placeholder="Password" name="pass1" required>
+			<input type="password" placeholder="Re Password" name="pass2" required>
+			<button type='submit'>Register</button>
+			<label for='form-switch'>Already Account ? Sign In</label>
+		</form>
+{% endblock %}

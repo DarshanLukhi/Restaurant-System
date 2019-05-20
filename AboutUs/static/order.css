@@ -1,0 +1,12 @@
+.in{
+width:20%;
+}
+table, th, td {
+    margin-left:30%;
+    margin-top:1%;
+}
+
+th, td {
+    padding: 15px;
+}
+}

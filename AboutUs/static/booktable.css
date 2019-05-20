@@ -1,0 +1,29 @@
+table{
+padding-left:50%
+	margin-left:35%;
+	margin-top:5%;
+	color: black;
+	font-weight: bold;
+	font-size: 20;
+	
+}
+input
+{
+	width: 150px;
+	height:25px;
+}
+select
+{
+
+	height:25px;
+}
+table tr td
+{
+	padding-top: 10px;
+	padding-bottom:10px;	
+}
+
+.btn:hover {
+    background-color: #555555;
+    color: white;
+}

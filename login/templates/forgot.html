@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block css %}
+	{% load static %}
+	<link rel=stylesheet href="{% static 'login.css' %}">
+{%endblock%}
+
+
+{%block title %} Forgot Password {%endblock%}
+
+		{%block body %}
+		<center>Please Enter followin detail to get Your password</center>
+		<br>
+		<form action="" method="POST">
+			{%csrf_token%}
+			
+		</form>
+{% endblock %}
